@@ -1,7 +1,19 @@
 {
 	"extends": "airbnb-base",
 	"rules": {
-		"no-underscore-dangle":"off"
+		"no-underscore-dangle":"off",
+		"linebreak-style":"off",
+		"no-tabs":"off",
+		"indent":"off",
+		"object-property-newline":"off",
+		"comma-dangle":"off",
+		"quotes":"off",
+		"arrow-spacing":"off",
+		"block-spacing":"off",
+		"brace-style":"off",
+		"semi":"off",
+		"keyword-spacing":"off",
+		"key-spacing":"off",
 
 	}
 }
