@@ -25,7 +25,7 @@ module.exports.deleteFilm = (req, res, next)=>{
 	Movie.findById(req.body.id)
 	.then((movie) => {
 		if(movie != null){
-			if (movie.owner.toString() === req.id){
+			if (movie.owner.toString() === req.id._id){
 				Movie.findByIdAndRemove(req.body.id)
 				.then(movie => res.send({ data: movie }))
 				.catch((err) => {
