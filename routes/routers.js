@@ -5,7 +5,7 @@ const auth = require('../middlewares/auth');
 
 router.post('/signup', celebrate({	//	Регистрация.
 	body: Joi.object().keys({
-		name: Joi.string().required().min(1),
+		name: Joi.string().required().min(2),
 		email: Joi.string().required().email(),
 		password: Joi.string().required().min(6),
 	}).unknown(true),

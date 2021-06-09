@@ -9,8 +9,8 @@ router.get('/', getSavedFilms);
 
 router.post('/', celebrate({
 	body: Joi.object().keys({
-		nameRu: Joi.string().required(),
-		nameEn: Joi.string().required(),
+		nameRU: Joi.string().required(),
+		nameEN: Joi.string().required(),
 		director: Joi.string().required(),
 		country: Joi.string().required(),
 		year: Joi.string().required(),

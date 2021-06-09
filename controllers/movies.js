@@ -8,11 +8,11 @@ module.exports.getSavedFilms = (req, res, next) => {
 };
 module.exports.addFilm = (req, res, next) => {
 	const {
-		nameRu, nameEn, director, country, year, duration,
+		nameRU, nameEN, director, country, year, duration,
 		description, image, trailer, thumbnail, movieId
 	} = req.body;
 	Movie.create({
-		nameRu, nameEn, director, country, year, duration,
+		nameRU, nameEN, director, country, year, duration,
 		description, image, trailer, thumbnail, owner:req.id, movieId
 	})
 	.then((movie) => res.send({ data: movie }))
@@ -26,7 +26,8 @@ module.exports.deleteFilm = (req, res, next)=>{
 	.then((movie) => {
 		if(movie != null){
 			if (movie.owner.toString() === req.id._id){
-				Movie.findByIdAndRemove(req.body.id)
+				movie.remove()
+		//		Movie.findByIdAndRemove(req.body.id)
 				.then(movie => res.send({ data: movie }))
 				.catch((err) => {
 					if (err.name === 'CastError') { next({ statusCode: 400 });}

@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 
 const movieSchema = new mongoose.Schema({
-	nameRu: {
+	nameRU: {
 		type: String,
 		required: true,
 	},
-	nameEn: {
+	nameEN: {
 		type: String,
 		required: true,
 	},
